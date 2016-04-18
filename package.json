@@ -17,9 +17,7 @@
   },
   "homepage": "https://github.com/SymbiosisApp/SymbiosisApp.github.io#readme",
   "devDependencies": {
-    "webpack": "^1.13.0"
   },
   "dependencies": {
-    "normalize.css": "^4.1.1"
   }
 }

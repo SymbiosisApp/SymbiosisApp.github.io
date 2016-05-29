@@ -1,64 +1,63 @@
 <template>
-  <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
-    <p>
-      Welcome to your Vue.js app!
-    </p>
-    <p>
-      To get a better understanding of how this boilerplate works, check out
-      <a href="http://vuejs-templates.github.io/webpack" target="_blank">its documentation</a>.
-      It is also recommended to go through the docs for
-      <a href="http://webpack.github.io/" target="_blank">Webpack</a> and
-      <a href="http://vuejs.github.io/vue-loader/" target="_blank">vue-loader</a>.
-      If you have any issues with the setup, please file an issue at this boilerplate's
-      <a href="https://github.com/vuejs-templates/webpack" target="_blank">repository</a>.
-    </p>
-    <p>
-      You may also want to checkout
-      <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
-      <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
-    </p>
+  <div id="app" :style="{ background: `url(${homeIllu}) no-repeat center` }">
+    <!-- <menu></menu> -->
+    <p class="come-back" :class="{ 'hidden': !loaded }" >Work in progress.</p>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+import 'normalize.css/normalize.css';
+import './assets/fonts/fonts.css';
+import homeIllu from './assets/home.svg';
+import Menu from './components/Menu';
 
 export default {
   components: {
-    Hello,
+    Menu,
+  },
+  data() {
+    return {
+      homeIllu,
+      loaded: false
+    }
+  },
+  ready() {
+    setTimeout(() => {
+      this.loaded = true
+    }, 200);
   },
 };
 </script>
 
 <style>
-html {
+html, body {
   height: 100%;
-}
-
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  width: 100%;
+  background: #A8CDF7;
+  overflow: hidden;
 }
 
 #app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
+  color: white;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.come-back {
   text-align: center;
+  font-size: 2rem;
+  line-height: 2;
+  margin-top: 200px;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: .4s;
+  font-family: Caslong, Tahoma, sans-serif;
 }
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
+.come-back.hidden {
+  opacity: 0;
+  transform: translateY(50px);
 }
 </style>

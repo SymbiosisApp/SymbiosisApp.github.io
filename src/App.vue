@@ -1,7 +1,11 @@
 <template>
   <div id="app" :style="{ background: `url(${homeIllu}) no-repeat center` }">
-    <!-- <menu></menu> -->
-    <p class="come-back" :class="{ 'hidden': !loaded }" >Work in progress.</p>
+    <div class="right-block">
+      <right-part :page="page"></right-part>
+    </div>
+    <div class="main-block" :class="{ 'full-width': page == 0 }">
+      <main-block :page="page"></main-block>
+    </div>
   </div>
 </template>
 
@@ -9,24 +13,19 @@
 import 'normalize.css/normalize.css';
 import './assets/fonts/fonts.css';
 import homeIllu from './assets/home.svg';
-import Menu from './components/Menu';
-import Concept from './components/Concept'
-import Application from './components/Application'
-import Team from './components/Team'
-import Contact from './components/Contact'
+import RightPart from './components/RightPart';
+import MainBlock from './components/MainBlock';
 
 export default {
   components: {
-    Menu,
-    Concept,
-    Application,
-    Team,
-    Contact
+    RightPart,
+    MainBlock
   },
   data() {
     return {
       homeIllu,
-      loaded: false
+      loaded: false,
+      page: 0
     }
   },
   ready() {
@@ -34,10 +33,15 @@ export default {
       this.loaded = true
     }, 200);
   },
+  events: {
+    'menu-change': function (index) {
+      this.page = index
+    }
+  }
 };
 </script>
 
-<style>
+<style lang="scss">
 html, body {
   height: 100%;
   width: 100%;
@@ -53,19 +57,24 @@ html, body {
   left: 0;
   right: 0;
 }
+.right-block {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+}
+.main-block {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 40%;
+  transition-duration: .3s;
 
-.come-back {
-  text-align: center;
-  font-size: 2rem;
-  line-height: 2;
-  margin-top: 200px;
-  opacity: 1;
-  transform: translateY(0);
-  transition-duration: .4s;
-  font-family: Caslong, Tahoma, sans-serif;
+  &.full-width {
+    right: 0%;
+  }
 }
-.come-back.hidden {
-  opacity: 0;
-  transform: translateY(50px);
-}
+
 </style>

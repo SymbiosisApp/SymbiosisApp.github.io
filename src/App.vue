@@ -10,10 +10,18 @@ import 'normalize.css/normalize.css';
 import './assets/fonts/fonts.css';
 import homeIllu from './assets/home.svg';
 import Menu from './components/Menu';
+import Concept from './components/Concept'
+import Application from './components/Application'
+import Team from './components/Team'
+import Contact from './components/Contact'
 
 export default {
   components: {
     Menu,
+    Concept,
+    Application,
+    Team,
+    Contact
   },
   data() {
     return {

@@ -4,7 +4,6 @@
       <li @click="setMenu(0)"><button type="button" name="button" class="btn" :class="{ selected: page == 0 }">Concept</button></li>
       <li @click="setMenu(1)"><button type="button" name="button" class="btn" :class="{ selected: page == 1 }">Application</button></li>
       <li @click="setMenu(2)"><button type="button" name="button" class="btn" :class="{ selected: page == 2 }">Team</button></li>
-      <li @click="setMenu(3)"><button type="button" name="button" class="btn" :class="{ selected: page == 3 }">Contact</button></li>
     </ul>
   </div>
 </template>
@@ -28,13 +27,14 @@ export default {
   ul {
     padding: 0;
     margin: 0;
-    text-align: center;
+    text-align: right;
     padding: 10px;
+    padding-right: 30px;
   }
   li {
     display: inline-block;
     list-style-type: none;
-    padding: 20px 10px;
+    padding: 20px 20px;
   }
 }
 .btn {

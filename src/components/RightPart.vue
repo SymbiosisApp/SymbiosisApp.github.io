@@ -4,7 +4,14 @@
       <menu :page="page"></menu>
     </div>
     <div class="text-content" :class="{ 'not-visible': page == 0 }">
-
+      <div class="content" :class="getClassForPage(1)">
+        <span class="num">01</span>
+        <h2>Plante évolutive</h2>
+        <p>Symbiosis vous propose d’<b>expérimenter différemment la nature qui vous entoure</b>.</p>
+        <p>
+          Pour ce faire, l’application génère une plante unique, qui évoluera grâce à vos pas quotidiens. Symbiosis a pour ambition de vous faire découvrir la nature urbaine autrement, en prennant conscience de votre marche.
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -20,6 +27,18 @@ export default {
   data() {
     return {};
   },
+  methods: {
+    getClassForPage(page) {
+      if (page == this.page) {
+        return 'current'
+      } else
+      if (page < this.page) {
+        return 'before'
+      } else {
+        return 'after'
+      }
+    },
+  }
 };
 </script>
 
@@ -38,9 +57,36 @@ export default {
   width: 100%;
   background: white;
   transition-duration: .3s;
+  color: #BBB3B3;
 
   &.not-visible {
     transform: translateX(100%)
+  }
+
+  .content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 70px;
+    padding-right: 40px;
+    padding-top: 40%;
+    font-size: 1.5vw;
+    line-height: 1.5;
+
+    h2 {
+      color: #FF6A4D;
+      font-family: Caslong;
+      font-weight: 400;
+      font-size: 3vw;
+    }
+    p {
+      font-family: Campton, Tahoma, sans-serif;
+      font-weight: 300;
+    }
+    b {
+      font-weight: 500;
+    }
   }
 }
 .menu-container {

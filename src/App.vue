@@ -91,6 +91,7 @@ html, body {
   bottom: 0;
   left: 0;
   right: 40%;
+  overflow: hidden;
   transition-duration: .3s;
 
   &.full-width {

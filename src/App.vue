@@ -43,6 +43,9 @@ export default {
       if (this.page == 1) {
         return '#FFE0D1'
       }
+      if (this.page == 2) {
+        return '#BFD8F4'
+      }
       return '#A8CDF7'
     }
   },

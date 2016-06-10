@@ -12,6 +12,14 @@
           Pour ce faire, l’application génère une plante unique, qui évoluera grâce à vos pas quotidiens. Symbiosis a pour ambition de vous faire découvrir la nature urbaine autrement, en prennant conscience de votre marche.
         </p>
       </div>
+      <div class="content" :class="getClassForPage(2)">
+        <span class="num">SYMBIOSIS</span>
+        <h2>L'Équipe</h2>
+        <p class="team-member"><b>Etienne Delalonchamp</b> — Dev, conception</p>
+        <p class="team-member"><b>Camille Frairrot</b> — Design, illu, conception</p>
+        <p class="team-member"><b>Quentin Tshaimanga</b> — Dev, conception</p>
+        <p class="team-member"><b>Victoire Douy</b> — Design, UI, conception</p>
+      </div>
     </div>
   </div>
 </template>
@@ -58,13 +66,14 @@ export default {
   background: white;
   transition-duration: .3s;
   color: #BBB3B3;
+  overflow: hidden;
 
   &.not-visible {
     transform: translateX(100%)
   }
 
   .content {
-    position: relative;
+    position: absolute;
     height: 100%;
     width: 100%;
     box-sizing: border-box;
@@ -73,6 +82,16 @@ export default {
     padding-top: 40%;
     font-size: 1.5vw;
     line-height: 1.5;
+    transition-duration: .3s;
+
+    &.before {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    &.after {
+      transform: translateX(100%);
+      opacity: 0;
+    }
 
     h2 {
       color: #FF6A4D;
@@ -83,6 +102,9 @@ export default {
     p {
       font-family: Campton, Tahoma, sans-serif;
       font-weight: 300;
+    }
+    .team-member {
+
     }
     b {
       font-weight: 500;

@@ -9,6 +9,28 @@
       <div class="illu-2"></div>
       <div class="phone-1"></div>
     </div>
+    <div class="full-page page page-1" :class="getClassForPage(2)">
+      <div class="member">
+        <div class="relative-container">
+          <div class="user-img"></div>
+        </div>
+      </div>
+      <div class="member">
+        <div class="relative-container">
+          <div class="user-img"></div>
+        </div>
+      </div>
+      <div class="member">
+        <div class="relative-container">
+          <div class="user-img"></div>
+        </div>
+      </div>
+      <div class="member">
+        <div class="relative-container">
+          <div class="user-img"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -129,6 +151,66 @@ p {
   height: 50%;
   width: 50%;
   transform: translate(-50%, -50%);
+}
+
+.member {
+  transition-duration: .3s;
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  .relative-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .user-img {
+    top: 0;
+    position: absolute;
+    bottom: 0;
+    left: 1vw;
+    right: 1vw;
+    z-index: 500;
+    transition-duration: .3s;
+    &:hover {
+      z-index: 1000;
+      left: -2vw;
+      right: -2vw;
+    }
+  }
+
+  &:nth-child(1) {
+    left: 0;
+    .user-img {
+      background: url(../assets/user-1.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+  &:nth-child(2) {
+    left: 25%;
+    .user-img {
+      background: url(../assets/user-2.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+  &:nth-child(3) {
+    left: 50%;
+    .user-img {
+      background: url(../assets/user-3.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+  &:nth-child(4) {
+    left: 75%;
+    .user-img {
+      background: url(../assets/user-4.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  &:hover {
+    background: #CBDFF5;
+  }
 }
 
 </style>

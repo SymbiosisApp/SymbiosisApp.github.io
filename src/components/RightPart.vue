@@ -15,7 +15,7 @@
       <div class="content" :class="getClassForPage(2)">
         <span class="num">SYMBIOSIS</span>
         <h2>L'Équipe</h2>
-        <p class="team-member"><b>Etienne Delalonchamp</b> — Dev, conception</p>
+        <p class="team-member"><b>Etienne Deladonchamps</b> — Dev, conception</p>
         <p class="team-member"><b>Camille Frairrot</b> — Design, illu, conception</p>
         <p class="team-member"><b>Quentin Tshaimanga</b> — Dev, conception</p>
         <p class="team-member"><b>Victoire Douy</b> — Design, UI, conception</p>

@@ -1,6 +1,6 @@
-# symbiosis-website
+# Symbiosis App's Website
 
-> Symbiosis App's Website
+Symbisis is a school project made at [Gobelins Paris](https://www.gobelins.fr/formation/mdi-design-et-management-de-l-innovation-interactive-cycle-2-lead-technique-ou-lead). Symbiosis is an iOS app that track user activity to grow a virtual plant.
 
 ## Build Setup
 
